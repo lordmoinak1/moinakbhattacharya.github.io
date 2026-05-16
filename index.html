@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Moinak Bhattacharya | PhD Candidate</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    font-family:'Inter',sans-serif;
+    background:#0f172a;
+    color:#e2e8f0;
+    line-height:1.7;
+}
+.container{
+    width:min(1100px,90%);
+    margin:auto;
+}
+nav{
+    position:fixed;
+    width:100%;
+    top:0;
+    background:rgba(15,23,42,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+    z-index:100;
+}
+nav .container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:1rem 0;
+}
+.logo{
+    font-weight:700;
+    font-size:1.1rem;
+}
+nav a{
+    color:#cbd5e1;
+    text-decoration:none;
+    margin-left:1.5rem;
+    transition:0.3s;
+}
+nav a:hover{
+    color:#38bdf8;
+}
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    background:linear-gradient(to bottom right,#0f172a,#111827,#1e293b);
+}
+.hero-content{
+    max-width:800px;
+}
+.tag{
+    display:inline-block;
+    padding:0.4rem 0.9rem;
+    border:1px solid rgba(56,189,248,0.4);
+    border-radius:999px;
+    color:#38bdf8;
+    margin-bottom:1.5rem;
+    font-size:0.9rem;
+}
+h1{
+    font-size:4rem;
+    line-height:1.1;
+    margin-bottom:1rem;
+}
+.hero p{
+    font-size:1.15rem;
+    color:#cbd5e1;
+    margin-bottom:2rem;
+}
+.btn-group{
+    display:flex;
+    gap:1rem;
+    flex-wrap:wrap;
+}
+.btn{
+    padding:0.9rem 1.5rem;
+    border-radius:12px;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+}
+.primary{
+    background:#38bdf8;
+    color:#0f172a;
+}
+.primary:hover{
+    transform:translateY(-2px);
+}
+.secondary{
+    border:1px solid rgba(255,255,255,0.15);
+    color:#e2e8f0;
+}
+section{
+    padding:5rem 0;
+}
+.section-title{
+    font-size:2rem;
+    margin-bottom:2rem;
+}
+.card-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:1.5rem;
+}
+.card{
+    background:#111827;
+    padding:1.8rem;
+    border-radius:20px;
+    border:1px solid rgba(255,255,255,0.06);
+    transition:0.3s;
+}
+.card:hover{
+    transform:translateY(-5px);
+    border-color:rgba(56,189,248,0.4);
+}
+.card h3{
+    margin-bottom:0.7rem;
+}
+.news-item{
+    margin-bottom:1rem;
+    padding:1rem 1.2rem;
+    background:#111827;
+    border-radius:14px;
+    border-left:4px solid #38bdf8;
+}
+footer{
+    padding:3rem 0;
+    text-align:center;
+    border-top:1px solid rgba(255,255,255,0.08);
+    color:#94a3b8;
+}
+.contact-links a{
+    color:#38bdf8;
+    text-decoration:none;
+    margin-right:1rem;
+}
+@media(max-width:768px){
+    h1{
+        font-size:2.8rem;
+    }
+    nav .links{
+        display:none;
+    }
+}
+</style>
+</head>
+<body>
+
+<nav>
+    <div class="container">
+        <div class="logo">Moinak Bhattacharya</div>
+        <div class="links">
+            <a href="#about">About</a>
+            <a href="#research">Research</a>
+            <a href="#news">News</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="container hero-content">
+        <div class="tag">PhD Candidate • Computer Vision • Medical AI</div>
+        <h1>Building AI for Healthcare & Medical Imaging</h1>
+        <p>
+            I am a 5th-year PhD candidate at Stony Brook University and a visiting PhD student at Columbia University. 
+            My research focuses on computer vision, multimodal AI, and medical imaging for healthcare applications.
+        </p>
+        <div class="btn-group">
+            <a href="#contact" class="btn primary">Get in Touch</a>
+            <a href="https://github.com" class="btn secondary">GitHub</a>
+        </div>
+    </div>
+</section>
+
+<section id="about">
+    <div class="container">
+        <h2 class="section-title">About</h2>
+        <div class="card">
+            <p>
+                My work explores AI-driven approaches for medical imaging, cancer research, and clinical decision support. 
+                I collaborate across institutions including Stony Brook University, Columbia University, NIH, and clinical research centers.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section id="research">
+    <div class="container">
+        <h2 class="section-title">Research Highlights</h2>
+        <div class="card-grid">
+            <div class="card">
+                <h3>Medical Imaging AI</h3>
+                <p>Developing robust deep learning models for radiology and cancer imaging workflows.</p>
+            </div>
+            <div class="card">
+                <h3>Computer Vision</h3>
+                <p>Researching multimodal representation learning and interpretable vision systems.</p>
+            </div>
+            <div class="card">
+                <h3>Clinical AI</h3>
+                <p>Building translational AI systems that bridge machine learning and clinical practice.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="news">
+    <div class="container">
+        <h2 class="section-title">Latest News</h2>
+
+        <div class="news-item">
+            <strong>5 papers accepted at SPIE 2026</strong> — Congrats Maya Balakumaran and Angelica P. Kurtz!
+        </div>
+
+        <div class="news-item">
+            <strong>2 SA & 2 EE accepted at RSNA 2025</strong> — Congrats Annie Singh, Fatima A. Qureshy, and Angelica P. Kurtz!
+        </div>
+
+        <div class="news-item">
+            Top 12 presenters at SBM Cancer Center Symposium — July 2025
+        </div>
+
+        <div class="news-item">
+            Best Session Talk Award at NIH NCI ITCR Trainee Symposium — June 2025
+        </div>
+
+        <div class="news-item">
+            Winner at Gloria & Mark Snyder Symposium — May 2025
+        </div>
+
+    </div>
+</section>
+
+<section id="contact">
+    <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <div class="card">
+            <p>Email: moinak[dot]bhattacharya[at]stonybrook.edu</p>
+            <div class="contact-links" style="margin-top:1rem;">
+                <a href="https://linkedin.com">LinkedIn</a>
+                <a href="https://x.com">X/Twitter</a>
+                <a href="https://github.com">GitHub</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        © 2026 Moinak Bhattacharya • Academic Portfolio
+    </div>
+</footer>
+
+</body>
+</html>
