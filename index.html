@@ -2,168 +2,353 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Moinak Bhattacharya | PhD Candidate</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moinak Bhattacharya | AI Research Portfolio</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
+
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     font-family:'Inter',sans-serif;
-    background:#0f172a;
-    color:#e2e8f0;
-    line-height:1.7;
+    background:#020617;
+    color:#f8fafc;
+    overflow-x:hidden;
 }
+
+/* Neural Background */
+
+.neural-bg{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    z-index:-1;
+    background:
+    radial-gradient(circle at 20% 30%, rgba(168,85,247,0.15), transparent 20%),
+    radial-gradient(circle at 80% 20%, rgba(34,211,238,0.15), transparent 25%),
+    radial-gradient(circle at 50% 80%, rgba(99,102,241,0.15), transparent 25%),
+    linear-gradient(135deg,#020617,#030712,#111827);
+}
+
+.neural-bg span{
+    position:absolute;
+    display:block;
+    width:2px;
+    height:220px;
+    background:linear-gradient(to bottom, transparent, rgba(56,189,248,0.6), transparent);
+    animation:float 8s linear infinite;
+    opacity:0.5;
+}
+
+.neural-bg span:nth-child(1){left:10%;top:10%;transform:rotate(30deg);}
+.neural-bg span:nth-child(2){left:30%;top:40%;transform:rotate(-25deg);}
+.neural-bg span:nth-child(3){left:55%;top:20%;transform:rotate(20deg);}
+.neural-bg span:nth-child(4){left:70%;top:60%;transform:rotate(-35deg);}
+.neural-bg span:nth-child(5){left:85%;top:25%;transform:rotate(45deg);}
+.neural-bg span:nth-child(6){left:45%;top:70%;transform:rotate(-15deg);}
+
+@keyframes float{
+    0%{
+        opacity:0.2;
+        transform:translateY(0px);
+    }
+    50%{
+        opacity:1;
+    }
+    100%{
+        opacity:0.2;
+        transform:translateY(-40px);
+    }
+}
+
 .container{
-    width:min(1100px,90%);
+    width:min(1150px,90%);
     margin:auto;
 }
+
+/* Navbar */
+
 nav{
     position:fixed;
-    width:100%;
     top:0;
-    background:rgba(15,23,42,0.85);
-    backdrop-filter: blur(12px);
-    border-bottom:1px solid rgba(255,255,255,0.08);
-    z-index:100;
+    width:100%;
+    backdrop-filter:blur(16px);
+    background:rgba(2,6,23,0.65);
+    border-bottom:1px solid rgba(255,255,255,0.05);
+    z-index:1000;
 }
+
 nav .container{
     display:flex;
     justify-content:space-between;
     align-items:center;
     padding:1rem 0;
 }
+
 .logo{
-    font-weight:700;
-    font-size:1.1rem;
+    font-weight:800;
+    letter-spacing:0.5px;
 }
+
 nav a{
     color:#cbd5e1;
     text-decoration:none;
     margin-left:1.5rem;
     transition:0.3s;
 }
+
 nav a:hover{
-    color:#38bdf8;
+    color:#22d3ee;
 }
+
+/* Hero */
+
 .hero{
     min-height:100vh;
     display:flex;
     align-items:center;
-    background:linear-gradient(to bottom right,#0f172a,#111827,#1e293b);
 }
-.hero-content{
-    max-width:800px;
+
+.hero-grid{
+    display:grid;
+    grid-template-columns:1.2fr 0.8fr;
+    gap:4rem;
+    align-items:center;
 }
+
 .tag{
     display:inline-block;
-    padding:0.4rem 0.9rem;
-    border:1px solid rgba(56,189,248,0.4);
+    padding:0.55rem 1rem;
     border-radius:999px;
-    color:#38bdf8;
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.08);
+    color:#c084fc;
     margin-bottom:1.5rem;
-    font-size:0.9rem;
+    backdrop-filter:blur(10px);
 }
+
 h1{
-    font-size:4rem;
-    line-height:1.1;
-    margin-bottom:1rem;
+    font-size:4.8rem;
+    line-height:1;
+    margin-bottom:1.2rem;
+    background:linear-gradient(to right,#ffffff,#c084fc,#22d3ee);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
 }
+
 .hero p{
-    font-size:1.15rem;
     color:#cbd5e1;
+    font-size:1.1rem;
     margin-bottom:2rem;
+    max-width:650px;
 }
-.btn-group{
+
+.hero-buttons{
     display:flex;
     gap:1rem;
     flex-wrap:wrap;
 }
+
 .btn{
-    padding:0.9rem 1.5rem;
-    border-radius:12px;
+    padding:1rem 1.5rem;
+    border-radius:16px;
     text-decoration:none;
     font-weight:600;
     transition:0.3s;
 }
+
 .primary{
-    background:#38bdf8;
-    color:#0f172a;
+    background:linear-gradient(135deg,#8b5cf6,#06b6d4);
+    color:white;
 }
+
 .secondary{
-    border:1px solid rgba(255,255,255,0.15);
-    color:#e2e8f0;
+    border:1px solid rgba(255,255,255,0.12);
+    color:white;
+    backdrop-filter:blur(10px);
 }
-section{
-    padding:5rem 0;
+
+.btn:hover{
+    transform:translateY(-4px) scale(1.02);
 }
-.section-title{
-    font-size:2rem;
-    margin-bottom:2rem;
-}
-.card-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:1.5rem;
-}
-.card{
+
+/* Profile */
+
+.profile-card{
+    position:relative;
+    border-radius:30px;
+    overflow:hidden;
+    height:480px;
+    border:1px solid rgba(255,255,255,0.08);
     background:#111827;
-    padding:1.8rem;
-    border-radius:20px;
-    border:1px solid rgba(255,255,255,0.06);
-    transition:0.3s;
+    box-shadow:0 30px 80px rgba(0,0,0,0.5);
 }
-.card:hover{
-    transform:translateY(-5px);
-    border-color:rgba(56,189,248,0.4);
+
+.profile-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
 }
-.card h3{
-    margin-bottom:0.8rem;
+
+.profile-overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to top, rgba(2,6,23,0.95), transparent 55%);
+}
+
+.profile-info{
+    position:absolute;
+    bottom:2rem;
+    left:2rem;
+}
+
+.profile-info h3{
+    font-size:1.5rem;
+}
+
+/* Sections */
+
+section{
+    padding:6rem 0;
+}
+
+.section-title{
+    font-size:2.4rem;
+    margin-bottom:2rem;
     color:#f8fafc;
 }
+
+/* Cards */
+
+.card-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:1.6rem;
+}
+
+.card{
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:28px;
+    padding:2rem;
+    backdrop-filter:blur(14px);
+    transition:0.35s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    border-color:rgba(34,211,238,0.5);
+    box-shadow:0 20px 60px rgba(34,211,238,0.12);
+}
+
+.card h3{
+    margin-bottom:1rem;
+    color:white;
+}
+
 .card p{
     color:#cbd5e1;
 }
+
+/* News */
+
 .news-item{
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.06);
+    border-left:4px solid #8b5cf6;
+    border-radius:20px;
+    padding:1.2rem 1.4rem;
     margin-bottom:1rem;
-    padding:1rem 1.2rem;
-    background:#111827;
-    border-radius:14px;
-    border-left:4px solid #38bdf8;
+    backdrop-filter:blur(12px);
+    transition:0.3s;
 }
-footer{
-    padding:3rem 0;
-    text-align:center;
-    border-top:1px solid rgba(255,255,255,0.08);
-    color:#94a3b8;
+
+.news-item:hover{
+    transform:translateX(8px);
 }
+
+/* Contact */
+
+.contact-box{
+    background:rgba(255,255,255,0.04);
+    border-radius:28px;
+    padding:2rem;
+    border:1px solid rgba(255,255,255,0.08);
+    backdrop-filter:blur(14px);
+}
+
+.contact-links{
+    margin-top:1rem;
+}
+
 .contact-links a{
-    color:#38bdf8;
+    color:#22d3ee;
+    margin-right:1.5rem;
     text-decoration:none;
-    margin-right:1rem;
+    font-weight:600;
 }
-@media(max-width:768px){
-    h1{
-        font-size:2.7rem;
+
+/* Footer */
+
+footer{
+    padding:2rem 0;
+    text-align:center;
+    color:#94a3b8;
+    border-top:1px solid rgba(255,255,255,0.06);
+}
+
+/* Mobile */
+
+@media(max-width:900px){
+
+    .hero-grid{
+        grid-template-columns:1fr;
+        text-align:center;
     }
+
+    h1{
+        font-size:3rem;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
     nav .links{
         display:none;
     }
 }
+
 </style>
 </head>
 
 <body>
 
+<div class="neural-bg">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
 <nav>
     <div class="container">
         <div class="logo">Moinak Bhattacharya</div>
+
         <div class="links">
             <a href="#about">About</a>
             <a href="#research">Research</a>
@@ -174,123 +359,172 @@ footer{
 </nav>
 
 <section class="hero">
-    <div class="container hero-content">
-        <div class="tag">PhD Candidate • Computer Vision • Medical AI</div>
-        <h1>Building AI for Healthcare & Medical Imaging</h1>
-        <p>
-            I am a 5th-year PhD candidate at Stony Brook University and a visiting PhD student at Columbia University.
-            My research focuses on computer vision, multimodal AI, and medical imaging for healthcare applications.
-        </p>
 
-        <div class="btn-group">
-            <a href="#contact" class="btn primary">Get in Touch</a>
-            <a href="https://github.com" class="btn secondary">GitHub</a>
-        </div>
-    </div>
+<div class="container hero-grid">
+
+<div>
+
+<div class="tag">PhD Candidate • Medical AI • Computer Vision</div>
+
+<h1>AI for Healthcare & Brain-Inspired Intelligence</h1>
+
+<p>
+I am a 5th-year PhD candidate at Stony Brook University and a visiting PhD student at Columbia University.
+My work focuses on multimodal AI, medical imaging, neuro-oncology, and interpretable foundation models for healthcare.
+</p>
+
+<div class="hero-buttons">
+<a href="#research" class="btn primary">Explore Research</a>
+<a href="#contact" class="btn secondary">Contact Me</a>
+</div>
+
+</div>
+
+<div class="profile-card">
+
+<img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1200&auto=format&fit=crop" alt="Profile">
+
+<div class="profile-overlay"></div>
+
+<div class="profile-info">
+<h3>Moinak Bhattacharya</h3>
+<p>Medical AI Researcher</p>
+</div>
+
+</div>
+
+</div>
+
 </section>
 
 <section id="about">
-    <div class="container">
-        <h2 class="section-title">About</h2>
 
-        <div class="card">
-            <p>
-                My work explores AI-driven approaches for medical imaging, cancer research,
-                multimodal learning, and clinical decision support systems.
-                I collaborate across institutions including Stony Brook University,
-                Columbia University, NIH, and clinical research centers.
-            </p>
-        </div>
-    </div>
+<div class="container">
+
+<h2 class="section-title">About</h2>
+
+<div class="card">
+
+<p>
+My research explores AI-driven approaches for medical imaging,
+multimodal learning, radiology workflows, topology-driven biomarkers,
+and clinical foundation models. I collaborate across Stony Brook University,
+Columbia University, NIH, and translational clinical research centers.
+</p>
+
+</div>
+
+</div>
+
 </section>
 
 <section id="research">
-    <div class="container">
-        <h2 class="section-title">Research</h2>
 
-        <div class="card-grid">
+<div class="container">
 
-            <div class="card">
-                <h3>Topological Biomarkers for Immunotherapy Response Prediction</h3>
-                <p>
-                    Developing topology-driven biomarkers and AI frameworks for predicting
-                    immunotherapy response across cancer imaging datasets.
-                </p>
-                <br>
-                <p><strong>Accepted at ITCR 2024 & ITCR 2025</strong></p>
-            </div>
+<h2 class="section-title">Research</h2>
 
-            <div class="card">
-                <h3>Generative AI & Foundation Models for Molecular Marker Prediction in Adult Glioma</h3>
-                <p>
-                    Building multimodal generative AI and vision foundation model approaches
-                    for molecular marker prediction and precision neuro-oncology applications.
-                </p>
-                <br>
-                <p><strong>Presented at ASNR 2025 • Accepted at RSNA 2025 [NEW]</strong></p>
-            </div>
+<div class="card-grid">
 
-            <div class="card">
-                <h3>Radiologists’ Eye Gaze Patterns Improve Disease Diagnosis</h3>
-                <p>
-                    Investigating eye-tracking-guided learning and human-AI collaboration
-                    for interpretable diagnostic systems in radiology.
-                </p>
-                <br>
-                <p><strong>Accepted at ECCV 2022, MICCAI 2022, and MIDL 2024</strong></p>
-            </div>
+<div class="card">
+<h3>Topological Biomarkers for Immunotherapy Response Prediction</h3>
 
-        </div>
-    </div>
+<p>
+Developing topology-driven biomarkers and AI frameworks for predicting
+immunotherapy response across cancer imaging datasets.
+</p>
+
+<br>
+
+<p><strong>Accepted at ITCR 2024 & ITCR 2025</strong></p>
+</div>
+
+<div class="card">
+<h3>Generative AI & Foundation Models for Molecular Marker Prediction in Adult Glioma</h3>
+
+<p>
+Building multimodal generative AI and foundation model approaches
+for molecular marker prediction and precision neuro-oncology applications.
+</p>
+
+<br>
+
+<p><strong>ASNR 2025 • RSNA 2025 [NEW]</strong></p>
+</div>
+
+<div class="card">
+<h3>Radiologists’ Eye Gaze Patterns Improve Disease Diagnosis</h3>
+
+<p>
+Investigating eye-tracking-guided learning and human-AI collaboration
+for interpretable diagnostic systems in radiology.
+</p>
+
+<br>
+
+<p><strong>ECCV 2022 • MICCAI 2022 • MIDL 2024</strong></p>
+</div>
+
+</div>
+
+</div>
+
 </section>
 
 <section id="news">
-    <div class="container">
-        <h2 class="section-title">Latest News</h2>
 
-        <div class="news-item">
-            <strong>5 papers accepted at SPIE 2026</strong> — Congrats Maya Balakumaran and Angelica P. Kurtz!
-        </div>
+<div class="container">
 
-        <div class="news-item">
-            <strong>2 SA & 2 EE accepted at RSNA 2025</strong> — Congrats Annie Singh, Fatima A. Qureshy, and Angelica P. Kurtz!
-        </div>
+<h2 class="section-title">Latest News</h2>
 
-        <div class="news-item">
-            Top 12 presenters at SBM Cancer Center Symposium — July 2025
-        </div>
+<div class="news-item">
+<strong>5 papers accepted at SPIE 2026</strong> — Congrats Maya Balakumaran and Angelica P. Kurtz!
+</div>
 
-        <div class="news-item">
-            Best Session Talk Award at NIH NCI ITCR Trainee Symposium — June 2025
-        </div>
+<div class="news-item">
+<strong>2 SA & 2 EE accepted at RSNA 2025</strong> — Congrats Annie Singh, Fatima A. Qureshy, and Angelica P. Kurtz!
+</div>
 
-        <div class="news-item">
-            Winner at Gloria & Mark Snyder Symposium — May 2025
-        </div>
+<div class="news-item">
+Top 12 presenters at SBM Cancer Center Symposium — July 2025
+</div>
 
-    </div>
+<div class="news-item">
+Best Session Talk Award at NIH NCI ITCR Trainee Symposium — June 2025
+</div>
+
+<div class="news-item">
+Winner at Gloria & Mark Snyder Symposium — May 2025
+</div>
+
+</div>
+
 </section>
 
 <section id="contact">
-    <div class="container">
-        <h2 class="section-title">Contact</h2>
 
-        <div class="card">
-            <p>Email: moinak[dot]bhattacharya[at]stonybrook.edu</p>
+<div class="container">
 
-            <div class="contact-links" style="margin-top:1rem;">
-                <a href="https://linkedin.com">LinkedIn</a>
-                <a href="https://x.com">X/Twitter</a>
-                <a href="https://github.com">GitHub</a>
-            </div>
-        </div>
-    </div>
+<h2 class="section-title">Contact</h2>
+
+<div class="contact-box">
+
+<p>Email: moinak[dot]bhattacharya[at]stonybrook.edu</p>
+
+<div class="contact-links">
+<a href="https://linkedin.com">LinkedIn</a>
+<a href="https://x.com">X/Twitter</a>
+<a href="https://github.com">GitHub</a>
+</div>
+
+</div>
+
+</div>
+
 </section>
 
 <footer>
-    <div class="container">
-        © 2026 Moinak Bhattacharya • Academic Portfolio
-    </div>
+© 2026 Moinak Bhattacharya • AI Research Portfolio
 </footer>
 
 </body>
