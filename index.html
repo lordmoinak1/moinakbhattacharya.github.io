@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +7,7 @@
 <title>Moinak Bhattacharya | PhD Candidate</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
 *{
     margin:0;
@@ -94,9 +96,6 @@ h1{
     background:#38bdf8;
     color:#0f172a;
 }
-.primary:hover{
-    transform:translateY(-2px);
-}
 .secondary{
     border:1px solid rgba(255,255,255,0.15);
     color:#e2e8f0;
@@ -110,7 +109,7 @@ section{
 }
 .card-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
     gap:1.5rem;
 }
 .card{
@@ -125,7 +124,11 @@ section{
     border-color:rgba(56,189,248,0.4);
 }
 .card h3{
-    margin-bottom:0.7rem;
+    margin-bottom:0.8rem;
+    color:#f8fafc;
+}
+.card p{
+    color:#cbd5e1;
 }
 .news-item{
     margin-bottom:1rem;
@@ -147,7 +150,7 @@ footer{
 }
 @media(max-width:768px){
     h1{
-        font-size:2.8rem;
+        font-size:2.7rem;
     }
     nav .links{
         display:none;
@@ -155,6 +158,7 @@ footer{
 }
 </style>
 </head>
+
 <body>
 
 <nav>
@@ -174,9 +178,10 @@ footer{
         <div class="tag">PhD Candidate • Computer Vision • Medical AI</div>
         <h1>Building AI for Healthcare & Medical Imaging</h1>
         <p>
-            I am a 5th-year PhD candidate at Stony Brook University and a visiting PhD student at Columbia University. 
+            I am a 5th-year PhD candidate at Stony Brook University and a visiting PhD student at Columbia University.
             My research focuses on computer vision, multimodal AI, and medical imaging for healthcare applications.
         </p>
+
         <div class="btn-group">
             <a href="#contact" class="btn primary">Get in Touch</a>
             <a href="https://github.com" class="btn secondary">GitHub</a>
@@ -187,10 +192,13 @@ footer{
 <section id="about">
     <div class="container">
         <h2 class="section-title">About</h2>
+
         <div class="card">
             <p>
-                My work explores AI-driven approaches for medical imaging, cancer research, and clinical decision support. 
-                I collaborate across institutions including Stony Brook University, Columbia University, NIH, and clinical research centers.
+                My work explores AI-driven approaches for medical imaging, cancer research,
+                multimodal learning, and clinical decision support systems.
+                I collaborate across institutions including Stony Brook University,
+                Columbia University, NIH, and clinical research centers.
             </p>
         </div>
     </div>
@@ -198,20 +206,40 @@ footer{
 
 <section id="research">
     <div class="container">
-        <h2 class="section-title">Research Highlights</h2>
+        <h2 class="section-title">Research</h2>
+
         <div class="card-grid">
+
             <div class="card">
-                <h3>Medical Imaging AI</h3>
-                <p>Developing robust deep learning models for radiology and cancer imaging workflows.</p>
+                <h3>Topological Biomarkers for Immunotherapy Response Prediction</h3>
+                <p>
+                    Developing topology-driven biomarkers and AI frameworks for predicting
+                    immunotherapy response across cancer imaging datasets.
+                </p>
+                <br>
+                <p><strong>Accepted at ITCR 2024 & ITCR 2025</strong></p>
             </div>
+
             <div class="card">
-                <h3>Computer Vision</h3>
-                <p>Researching multimodal representation learning and interpretable vision systems.</p>
+                <h3>Generative AI & Foundation Models for Molecular Marker Prediction in Adult Glioma</h3>
+                <p>
+                    Building multimodal generative AI and vision foundation model approaches
+                    for molecular marker prediction and precision neuro-oncology applications.
+                </p>
+                <br>
+                <p><strong>Presented at ASNR 2025 • Accepted at RSNA 2025 [NEW]</strong></p>
             </div>
+
             <div class="card">
-                <h3>Clinical AI</h3>
-                <p>Building translational AI systems that bridge machine learning and clinical practice.</p>
+                <h3>Radiologists’ Eye Gaze Patterns Improve Disease Diagnosis</h3>
+                <p>
+                    Investigating eye-tracking-guided learning and human-AI collaboration
+                    for interpretable diagnostic systems in radiology.
+                </p>
+                <br>
+                <p><strong>Accepted at ECCV 2022, MICCAI 2022, and MIDL 2024</strong></p>
             </div>
+
         </div>
     </div>
 </section>
@@ -246,8 +274,10 @@ footer{
 <section id="contact">
     <div class="container">
         <h2 class="section-title">Contact</h2>
+
         <div class="card">
             <p>Email: moinak[dot]bhattacharya[at]stonybrook.edu</p>
+
             <div class="contact-links" style="margin-top:1rem;">
                 <a href="https://linkedin.com">LinkedIn</a>
                 <a href="https://x.com">X/Twitter</a>
